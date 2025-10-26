@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+	width: 99%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.annotator-tool, .content-area, .annotations-area-container {
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.annotator-tool, .annotations-area-container {
+    width: 40%;
+    background: white;
+}
+
+.act {
+width: 100%;
+height: 100%;
+}
+
+iframe {
+width: 100%;
+height: 100%;
+background: white;
+}
+
+.content-area {
+    flex-grow: 1;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+input[type="text"], select, textarea, button {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 5px;
+}
+
+.pre, .navigation-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.pre, .navigation-buttons button {
+    width: 30%;
+}
+
+.navigation-buttons {
+    width: 100%;
+}
+
+.annotations-area {
+    width: 100%; /* Ensures the textarea fills its container */
+    height: 90%; /* Set a fixed initial height */
+    /*resize: both;  Allows both vertical and horizontal resizing */
+    overflow: auto; /* Adds scroll bars when content overflows */
+}
+#formatted-text-container {
+    width: 90%;
+    height: 100%;
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislation Viewer and Annotator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/rightpanel.css">
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.js"></script>
+	<script>
+            //gestione sliding pannello laterale:apparizione
+            $(document).ready(function()
+            {
+                //open the lateral panel
+                $('#manageBtn').on('click', function(event){
+                        event.preventDefault();
+                        
+                        if($('.cd-panel').hasClass( "is-visible" ))
+                            $('.cd-panel').removeClass('is-visible');
+                        else
+                            $('.cd-panel').addClass('is-visible');
+                });
+                //close the lateral panel
+                $('.cd-panel-close').on('click', function(event)
+                {
+                    //if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) { 
+                            $('.cd-panel').removeClass('is-visible');
+                            event.preventDefault();
+                    //}
+                });                
+            });
+    </script>
+	<script>
+		<!-- if the annotator close or refresh the page by mistake, before closing all annotations are saved -->
+		window.onbeforeunload = exportAnnotations;
+	</script>
+</head>
+<body>
+    <div class="annotator-tool">
+        <!-- Annotation fields -->
+        <div>
+            <label><b>IT IS</b>: 
+			<select id="deontic">
+                <option value="OBLIGATORY">OBLIGATORY</option>
+                <option value="PERMITTED">PERMITTED</option>
+                <option value="PROHIBITED">PROHIBITED</option>
+            </select></label>
+        </div>
+        <div style="margin-top:15px">
+            <label><b>FOR</b>: <textarea id="for" placeholder="Authority, Person, Entity..."></textarea>
+        </div>
+        <div style="margin-top:5px;height:20%">
+            <label><b>TO</b>: <textarea style="height:80%" id="to" placeholder="Action, Requirement..."></textarea></label>
+        </div>
+		<div style="margin-top:5px;height:42%">
+			<select id="condition1">
+                <option value="WHEN/IF/WHERE">WHEN/IF/WHERE</option>
+                <option value="ONLY IF">ONLY IF</option>
+				<option value="AFTER">AFTER</option>
+                <option value="BEFORE">BEFORE</option>
+                <option value="SUBJECT TO">SUBJECT TO</option>
+                <option value="UNLESS">UNLESS</option>
+            </select>
+            <textarea style="height:30%" id="conditionText1" placeholder="Condition details..."></textarea>
+        	<select id="condition2">
+                <option value="UNLESS">UNLESS</option>
+                <option value="SUBJECT TO">SUBJECT TO</option>
+				<option value="WHEN/IF/WHERE">WHEN/IF/WHERE</option>
+				<option value="ONLY IF">ONLY IF</option>
+                <option value="AFTER">AFTER</option>
+                <option value="BEFORE">BEFORE</option>
+            </select>
+            <textarea style="height:30%" id="conditionText2" placeholder="Condition details..."></textarea>
+        </div>
+		<div>
+		<button onclick="addAnnotation()">Add Annotation</button>
+		<button type="submit" value="Submit" id="manageBtn">Show annotations done so far</button>
+		</div>
+    </div>
+    <div class="act">
+        <iframe src="acts/2014_6.xhtml" title="Iframe Example"></iframe>
+	</div>
+	<!-- PANNELLO LATERALE DESTRO SCORREVOLE -->
+	<div  class="cd-panel from-right">
+		<div class="cd-panel-container">
+			<textarea id="annotations-area" class="annotations-area" placeholder="Your annotations will appear here..."></textarea>
+			<button style="width:100%" onclick="exportAnnotations()">Export Annotations</button>
+		</div>
+	</div>
+</body>
+</html>

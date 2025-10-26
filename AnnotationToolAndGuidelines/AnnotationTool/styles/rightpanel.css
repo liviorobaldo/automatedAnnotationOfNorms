@@ -1,0 +1,1013 @@
+root 
+{ 
+    display: block;
+}
+
+html 
+{
+    height:100%;
+    overflow:hidden; /* taglio tutto il contenuto fuori dallo schermo */
+}
+
+body
+{
+    height:100%;
+   
+    /* per fare in modo che le dimensioni e il posizionamento dei figli siano 
+       espresse in relazione al body */
+    position:relative; 
+
+    /* Because body isn't positioned (or more accurately, it's position:static 
+       by default), setting a child element to height:100% causes it to be 100% 
+       of the height of the html element, not the body element. Thus, if you 
+       want something to be as tall as the body is (going down past the bottom 
+       of the page) use body { position:relative } */
+    
+    margin:0px; 
+    border:0px solid black;
+    background-color: #b6fff7; 	 
+    font: 12px verdana, sans-serif; 
+}
+
+b
+{
+    font-weight: bold;
+}
+
+#headerDiv
+{
+    /* se si vuole che la larghezza sia aderente perfettamente a quella del body 
+       NON inserire la sua specifica, neanche width:100%*/
+    position:absolute;
+    height:50px;
+    top:0px;
+    right:0px;
+    left:0px;
+    background-color: #679BB7; 
+    border:0px orange;
+    padding:5px;  
+/*
+    -webkit-box-shadow: inset 2px 2px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow:    inset 2px 2px 10px 0px rgba(0,0,0,0.3);
+    box-shadow:         inset 2px 2px 10px 0px rgba(0,0,0,0.3);  
+  */  
+    -webkit-box-shadow: inset 0px -18px 12px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -18px 12px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -18px 12px -10px rgba(0,0,0,0.75);
+ 
+}
+
+#contentDiv
+{
+    /* definendo la posizione di questo div absolute esprimo le sue dimensioni
+       attraverso top-right-bottom-left */
+    position:absolute;
+    top:50px;
+    bottom:30px;
+    right:0px;
+    left:0px;
+    border:3px red;
+    font: normal 14px Verdana, 'Century Gothic', Arial, sans-serif;
+    /*Futura, ‘Century Gothic’, AppleGothic, sans-serif;*/
+}
+
+#footerDiv
+{
+    /* una box definita tramite un posizionamento assoluto si posiziona rispetto
+       al padre attraverso le proprietà left, top, right, bottom. NOn specificare
+       la width se si desidera che la sua larghezza coincida con quella del padre
+       (in tal caso left = right = 0px)*/
+    position:absolute; 
+    height:30px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+     background: #cdcdcd;
+    border:0px orange;
+    
+    -webkit-box-shadow: inset 0px 10px 8px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 10px 8px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 10px 8px -10px rgba(0,0,0,0.75);      
+}
+
+#headerDiv h1
+{  
+    font-size: 18px; 
+    margin: 0px;
+    /*color: #222;*/ 
+    color:#8d6e63;
+    font-family: 'Trocchi', serif; /*Merriweather, Trocchi */
+    font-size: 28px; 
+    font-weight: bold; 
+    line-height: 40px; 
+    margin: 0;
+    text-shadow: 2px 1px 1px #000; 
+}
+      
+.footer p
+{
+    text-align: center; 
+    margin: 0px;
+}
+       
+#leftDiv
+{
+    width:25%;
+    height:99%; /* assume il 100% dell'altezza del div contenitore! */
+    float: left;
+    background-color: #bbd2df;
+    position:relative;
+    overflow: auto;
+    border:0px double orange;
+    padding-left:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+    
+    -webkit-box-shadow: inset -22px 0px 20px -25px rgba(0,0,0,1);
+    -moz-box-shadow: inset -22px 0px 20px -25px rgba(0,0,0,1);
+    box-shadow: inset -22px 0px 20px -25px rgba(0,0,0,1);
+}
+
+
+#rightDiv
+{
+    width:75%;
+    height:100%;
+    left:25%;
+    position:absolute;
+    background-color: #fff;
+    border:0px double blue;
+    margin-left:4px;
+}
+
+#actionsDiv
+{
+    position:absolute;
+    height:12%; /* vedi height di fileContentDiv */
+    right:0px;
+    left:0px;
+    top:0;
+    background-color: #b0bec5;
+    border:0px double blue;
+    vertical-align: middle;
+    display: table-cell;
+    padding-top:5px;
+    
+    -webkit-box-shadow: inset 0px -18px 8px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -18px 8px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -18px 8px -10px rgba(0,0,0,0.75);    
+}
+/*
+#background{
+    position:absolute;
+    z-index:0;
+    background:white;
+    display:block;
+    min-height:50%; 
+    min-width:50%;
+    color:yellow;
+}*/
+
+#fileContentDiv
+{
+    position:absolute;
+    height:82%;
+    background-color: #ffffff;
+    right:0px;
+    left:0px;
+    bottom:0;
+    padding:20px 20px 20px 20px;
+    overflow: auto; /* scroll */
+    border:0px double blue;
+    line-height: 1.5em;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-size:16px;
+}
+
+/* riquadro blu trascinamento file */
+.droppable 
+{ 
+    position:absolute;
+    top:25%;
+    bottom:25%;
+    left:15%;
+    right:15%;
+    background: #37a8e1; 
+    color: #0088cc; 
+    padding: 110px 100px 100px 100px;
+    text-align: center; 
+    
+    font-size:18px;
+    text-shadow: rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;    
+}
+
+.droppable.dragover 
+{ 
+    background: #00CC71; 
+}
+
+/*** stile elementi contenuti in treeView ***/
+#treeView li
+{
+    list-style: none;
+    padding-top: 5px;
+    /*list-style-type: circle;*/
+}
+
+#treeView ul
+{ 
+    padding-left: 1em;
+    padding-top: 5px;
+}
+
+#treeView b
+{ 
+    padding-right: 1em; 
+    padding-top: 5px;
+}
+
+/* LOOK DEI PULSANTI */
+
+/* pulsante di gestione files */
+.manageBtn 
+{
+    color: #900;
+    background: #ababab;
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #4CAF50;
+    width:140px;
+    height:30px;
+    cursor:pointer; /* puntatore a manina quando sopra elemento */
+    background: url('/images/next.png') left center no-repeat;
+    padding-left: 15px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000;  
+}
+ 
+.manageBtn:hover {
+  color: #FFF;
+  background: #900;
+}
+
+/* pulsanti di caricamento files XML */
+.btn {
+    color: #333; /* #900 */
+    background: #cdcdcd;
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #000;
+    width:180px;
+    height:35px;
+    cursor:pointer; /* puntatore a manina quando sopra elemento */
+    
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #bbb; /* orizzontale, verticale, sfocatura, colore */
+    
+    letter-spacing: 3px;
+}
+ 
+.btn:hover {
+  color: #FFF;
+  background: #900;
+}
+
+/* pulsanti di caricamento files XML */
+.btnLarge {
+    color: #fff;
+    background: #ababab;
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #000;
+    width:160px;
+    height:45px;
+    cursor:pointer; /* puntatore a manina quando sopra elemento */
+    
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000; /* orizzontale, verticale, sfocatura, colore */
+    
+    letter-spacing: 3px;
+}
+ 
+.btnLarge:hover {
+  color: #FFF;
+  background: #900;
+}
+
+/* pulsante salva */
+input[type=button] 
+{
+    color: #900;
+    background: #ababab;
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #900;
+    width:160px;
+    height:35px;
+    
+    /*
+    color:#08233e;
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size:90%;
+    padding:8px;*/
+    background:url(overlay.png) repeat-x center #ffcc00;
+    background-color:rgba(255,204,0,1);
+    border:0px solid #000;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    /*
+    border-bottom:1px solid #9f9f9f;
+    -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    */
+    cursor:pointer;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #fff; 
+}
+input[type=button]:hover {
+    background-color:rgba(255,204,0,0.8);
+}
+
+.btnFunction {
+    color: darkgreen;
+    background: #ababab;
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #000;
+    width:140px;
+    height:35px;
+    cursor:pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000; 
+    
+    letter-spacing: 3px;
+}
+ 
+.btnFunction:hover {
+  color: #FFF;
+  background: #900;
+}
+
+.btnConstant 
+{
+    color: #08c;
+    background: #ababab;  
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #000;
+    width:140px;
+    height:35px;
+    cursor:pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000; 
+    
+    letter-spacing: 3px;
+}
+ 
+.btnConstant:hover {
+  color: #FFF;
+  background: #900;
+}
+
+.btnRioFormula 
+{
+    color: #9b26af;
+    background: #ababab; 
+    font-weight: bold;
+    font-size:16px;
+    border: 0px solid #000;
+    width:180px;
+    height:35px;
+    cursor:pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000; 
+    
+    letter-spacing: 3px;
+}
+ 
+.btnRioFormula:hover {
+  color: #FFF;
+  background: #900;
+}
+
+
+/* COLORE DEL TESTO INCLUSO NEI TAG */
+/* nome del tag */
+function
+{
+    color: darkgreen;
+    font-weight:bold;
+    /*background-color: #fff000;*/
+}
+
+constant
+{
+    color: #08c;
+    font-weight:bold;
+    /*background-color: #08c;*/
+}
+
+rioformula
+{
+    color: #9b26af;
+    font-weight:bold;
+    /*background-color: #08c;*/
+}
+
+.function
+{
+    color: darkgreen;
+    font-weight:bold;
+    /*background-color: #fff000;*/
+}
+
+.constant
+{
+    color: #08c;
+    font-weight:bold;
+    /*background-color: #08c;*/
+}
+
+.rioformula
+{
+    color: #9b26af;
+    font-weight:bold;
+    /*background-color: #08c;*/
+}
+
+function_text
+{
+    color: darkgreen;
+    font-style: italic;
+}
+
+constant_text
+{
+    color: #08c;
+    font-style: italic;
+}
+
+rioformula_text
+{
+    color: #9b26af;
+    font-style: italic;
+}
+
+.function_text
+{
+    color: darkgreen;
+    font-style: italic;
+}
+
+.constant_text
+{
+    color: #08c;
+    font-style: italic;
+}
+
+.rioformula_text
+{
+    color: #9b26af;
+    font-style: italic;
+}
+
+
+#filenameDiv
+{
+    height:20px;
+    text-align: center; 
+    padding-top:5px;
+    padding-left:0px;
+    border: 0px solid #900;
+    color: #333; /* #900 */
+    background: #cdcdcd;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+#filenamePredicateListDiv
+{
+    height:20px;
+    text-align: center; 
+    padding-top:5px;
+    padding-left:0px;
+    border: 0px solid #900;
+    color: #333; /* #900 */
+    background: #cdcdcd;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+#alertDiv
+{
+    padding:20px;
+    text-align: center;
+}
+
+
+/* CAMPI PER PERSONALIZZARE L'ASPETTO DI JQUERY DIALOG */
+
+ui-dialog /* Main container of whole thing */
+{
+    border: 0;
+    padding: .5em 1em;
+    background: #ff0000;
+    overflow: auto;
+    zoom: 1;
+}
+
+.btnAdd {
+  color: #fff;
+  background: #08c;
+  font-weight: bold;
+  border: 1px solid #900;
+  width:45px;
+  height:30px;
+}
+ 
+.btnConstant:hover {
+  color: #FFF;
+  background: #900;
+}
+
+/*** IMPORTANTISSIMO: i tag che, per impostazione predefinita, non vengono
+     renderizzati di default attraverso il metodo js 'innerHTML' oppure 
+     il corrispondente jquery 'html()', possono tornare ad essere visualizzati
+     impostando la loro visibilità tramite l'attributo 'display'. ***/
+/*lista di tag non renderizzati di cui si vuole esplicitare la visualizzazione */
+title {
+    display: block;
+}
+
+/* PANNELLO LATERALE SCORREVOLE DESTRO */
+.cd-panel 
+{
+    visibility: hidden;
+
+    position: fixed;
+    -webkit-transition: visibility 0s 0.6s;
+    -moz-transition: visibility 0s 0.6s;
+    transition: visibility 0s 0.6s;    
+    
+    background-color: #bbd2df;
+}
+
+.cd-panel::after 
+{
+    /* overlay layer */
+    position: absolute;
+    cursor: pointer;
+    -webkit-transition: background 0.3s 0.3s;
+    -moz-transition: background 0.3s 0.3s;
+    transition: background 0.3s 0.3s;
+}
+
+.cd-panel.is-visible 
+{
+    visibility: visible;
+    -webkit-transition: visibility 0s 0s;
+    -moz-transition: visibility 0s 0s;
+    transition: visibility 0s 0s;    
+    
+    background-color: #bbd2df;
+}
+
+.cd-panel.is-visible::after 
+{
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: background 0.3s 0s;
+    -moz-transition: background 0.3s 0s;
+    transition: background 0.3s 0s;
+}
+
+.cd-panel.is-visible .cd-panel-close::before 
+{
+    -webkit-animation: cd-close-1 0.6s 0.3s;
+    -moz-animation: cd-close-1 0.6s 0.3s;
+    animation: cd-close-1 0.6s 0.3s;
+}
+
+.cd-panel.is-visible .cd-panel-close::after 
+{
+    -webkit-animation: cd-close-2 0.6s 0.3s;
+    -moz-animation: cd-close-2 0.6s 0.3s;
+    animation: cd-close-2 0.6s 0.3s;
+}
+
+@keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.cd-panel-header 
+{
+    position: fixed;
+    width: 20%;
+    height:65px;
+    right: 0px;
+    top: 100px;
+    
+    line-height: 50px;
+    /*background: rgba(255, 255, 255, 0.96);*/
+    background-color: #b0bec5;
+    /*background-color: #fff;*/
+    z-index: 2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    -webkit-transition: top 0.3s 0s;
+    -moz-transition: top 0.3s 0s;
+    transition: top 0.3s 0s;
+}
+
+.cd-panel-header h1 
+{
+    font-weight: bold;
+    color: #8d6e63;
+    padding-left: 5%;
+}
+/*
+.from-right .cd-panel-header, .from-left .cd-panel-header {
+  top: -50px;
+}
+.from-right .cd-panel-header {
+  right: 0;
+}
+.from-left .cd-panel-header {
+  left: 0;
+}*/
+
+.is-visible .cd-panel-header 
+{
+    top: 50px; /*distanza dal top quando è visualizzato*/
+    
+    -webkit-transition: top 0.3s 0.3s;
+    -moz-transition: top 0.3s 0.3s;
+    transition: top 0.3s 0.3s;
+}
+/*
+@media only screen and (min-width: 768px) {
+  .cd-panel-header {
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-panel-header {
+    width: 20%;
+  }
+}*/
+
+.cd-panel-close 
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  /* image replacement */
+ 
+  background: url('/images/next.png') ;
+   
+  display: inline-block; 
+  overflow: hidden;
+  
+  /*text-indent: 100%;*/
+  
+  white-space: nowrap;
+}
+.cd-panel-close::before, .cd-panel-close::after {
+  /* close icon created in CSS */
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  height: 3px;
+  width: 20px;
+  background-color: #424f5c;
+  /* this fixes a bug where pseudo elements are slighty off position */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cd-panel-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.cd-panel-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.no-touch .cd-panel-close:hover {
+  background-color: #424f5c;
+}
+.no-touch .cd-panel-close:hover::before, .no-touch .cd-panel-close:hover::after {
+  background-color: #ffffff;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.no-touch .cd-panel-close:hover::before {
+  -webkit-transform: rotate(220deg);
+  -moz-transform: rotate(220deg);
+  -ms-transform: rotate(220deg);
+  -o-transform: rotate(220deg);
+  transform: rotate(220deg);
+}
+.no-touch .cd-panel-close:hover::after {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.cd-panel-container 
+{
+    /*...*/
+    position: fixed;
+    width: 20%;
+    bottom:30px;
+    top: 100px;
+    right: 0;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-delay: 0.3s;
+
+    transform: translate3d(100%, 0, 0);
+    
+    background: #dbe2e9;
+    z-index: 1;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    transition-delay: 0.3s;    
+}
+ 
+.from-right .cd-panel-container {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.from-left .cd-panel-container {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+.is-visible .cd-panel-container 
+{
+    top:100px;/*distanza dal top quando è visualizzato*/
+    
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s;    
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-panel-container {
+    width: 40%;
+	padding: 1% 1% 1% 1%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-panel-container {
+    width: 40%;
+  }
+}
+
+.cd-panel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5% 5% 5% 5%;
+  overflow: auto;
+  /* smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-panel-content p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #424f5c;
+  line-height: 1.4;
+  margin: 2em 0;
+}
+.cd-panel-content p:first-of-type {
+  margin-top: 0;
+}
+@media only screen and (min-width: 768px) {
+  .cd-panel-content p {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* per caselle di immissione testo */
+input[type="text"] 
+{
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+    -webkit-box-shadow: 2px 2px 5px 1px #969696;
+    -moz-box-shadow: 2px 2px 5px 1px #969696;
+    box-shadow: 2px 2px 5px 1px #969696;
+    width:290px;
+    padding:5px;
+}
+
+.selectDiv
+{
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+    -webkit-box-shadow: 2px 2px 5px 1px #969696;
+    -moz-box-shadow: 2px 2px 5px 1px #969696;
+    box-shadow: 2px 2px 5px 1px #969696;
+    
+    width:300px;
+    padding:0px;  
+}
+
+/*** personalizzazione elementi dialog dei predicati ***/
+.dialog-predicates-class.ui-dialog
+{
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+}
+
+/*** pulsante aggiungi nella dialog dei predicati ***/
+.addButton {
+	-moz-box-shadow: 2px 2px 6px 0px #276873;
+	-webkit-box-shadow: 2px 2px 6px 0px #276873;
+	box-shadow: 2px 2px 6px 0px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+	background-color:#599bb3;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:16px;
+	padding:10px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.addButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+}
+.addButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*** elementi di stile dialog predicati ***/
+
+.ui-dialog .ui-dialog-titlebar 
+{
+    border:1px;
+    display: visible;
+    padding: .3em 1em .5em .4em;
+    background-color: #679BB7; /*#846733;*/ 
+    font-size: 18px;
+    color: #fff;
+}
+
+/* area pulsanti in basso */
+.ui-dialog .ui-dialog-buttonpane 
+{
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+        background-color: #679BB7; /*#846733;*/
+}
+
+/* pulsanti */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset 
+{
+	float: right;
+        background-color: #679BB7;     
+}
+
+/* pulsanti su cui è settata classe 'orange' */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .orange
+{
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    line-height: normal;
+    margin-right: .5em;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    overflow: visible;
+    /* removes extra width in IE */
+    background-image: none;  
+    color: #333; /* #900 */
+    background: #cdcdcd;
+    font-size: 15px;
+    height:35px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+   
+    font-weight: bold;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+    
+}
+
+/* modifica aspetto cursore mouse su + e - in treeview */
+.nodeClass
+{
+    cursor:pointer;
+}
+
+
+
+
+
+
+
