@@ -1,3 +1,4 @@
+<html>
 <p style="text-align: justify;">
 This subfolder contains the JavaScript tool that was distributed to the annotators to enable them to annotate additional regulative norms from UK Acts.
 </p>
@@ -12,6 +13,6 @@ By clicking "Add annotations", the text entered into the slots is added to the l
 - To add conditions under which the regulative norms apply. The tool allows at most two conditions, since legislative norms typically contain no more than two, although in rare cases they may include three or more.
 - To slightly paraphrase the text for fluency, while keeping modifications to a minimum.
 </p>
-
+</html>
 
 
