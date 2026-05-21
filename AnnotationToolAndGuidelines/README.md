@@ -1,3 +1,3 @@
 This subfolder contains:
-- The guidelines distributed to the annotators, along with sample annotations that the paper’s authors created offline.
-- The JavaScript tool that the annotators were instructed to use to annotate additional regulative rules from other acts.
+- The annotation guidelines, together with sample annotations.
+- The JavaScript tool that annotators used to extract and annotate regulatory rules from UK Acts.
