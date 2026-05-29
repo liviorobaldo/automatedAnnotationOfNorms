@@ -1,3 +1,4 @@
+<p style="text-align: justify;">
 This folder contains the source code and data for the research presented in the paper "Consistent template-based annotation of regulative norms from legislation with LLM support".
 
 The repository is organised into four folders:
@@ -20,3 +21,4 @@ The repository is organised into four folders:
 
 - CORPUS:
   This folder contains the data used and produced by the code in the other folders. It includes the original LegalDocML files (note that publicly available versions are periodically updated, whereas the versions included here correspond to those available at the time this research was conducted), as well as the corresponding JSON files containing the template-based representations of regulative norms extracted from the LegalDocML documents.
+</p>
