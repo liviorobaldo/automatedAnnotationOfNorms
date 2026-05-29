@@ -7,6 +7,7 @@ This folder contains the source code and data for the research presented in the 
 
 <p>The repository is organised into four folders:</p>
 
+<br>
 <h3>AnnotationToolAndGuidelines</h3>
 <p>
 This folder contains the JavaScript annotation tool used by the annotators hired for this research to manually construct the initial gold-standard corpus, together with the annotation guidelines describing how the annotation task was carried out.
