@@ -26,7 +26,7 @@ This folder contains Java procedures for pre-processing the gold-standard corpus
     Output:
     <code>toFineTuneOpenAI_training.json</code> and
     <code>toFineTuneOpenAI_validation.json</code> (80% / 20% split),
-    plus <code>batchForOpenAI.jsonl</code> for a new <code>&lt;part&gt;</code>code> of a UK Act.
+    plus <code>batchForOpenAI.jsonl</code> for a new <code>&lt;part&gt;</code> of a UK Act.
   </li>
   <li>
     The first two files are used to fine-tune GPT-4.1, while the batch file is submitted to the fine-tuned model to automatically annotate new regulative norms.
