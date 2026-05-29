@@ -23,9 +23,9 @@ This folder contains Java procedures for pre-processing the gold-standard corpus
 <ul>
   <li>
     Input: the gold-standard corpus.
-    Output:
+    Output: 80%/20% split between the two files
     <code>toFineTuneOpenAI_training.json</code> and
-    <code>toFineTuneOpenAI_validation.json</code> (80% / 20% split),
+    <code>toFineTuneOpenAI_validation.json</code> ,
     plus <code>batchForOpenAI.jsonl</code> for a new <code>&lt;part&gt;</code> of a UK Act.
   </li>
   <li>
