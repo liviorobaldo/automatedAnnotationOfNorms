@@ -1,0 +1,1 @@
+java -cp .;.\lib\* -Dfile.encoding=UTF-8 Phase1_BuildFineTuningCorpusAndBatchFile
